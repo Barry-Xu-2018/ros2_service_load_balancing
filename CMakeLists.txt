@@ -24,7 +24,7 @@ add_executable(service_load_balancing
   src/service_server_proxy.cpp
   src/main.cpp
 )
-ament_target_dependencies(service_load_balancing rclcpp)
+target_link_libraries(service_load_balancing rclcpp::rclcpp)
 
 install(TARGETS
   service_load_balancing

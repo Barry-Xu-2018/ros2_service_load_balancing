@@ -11,31 +11,31 @@ ament_add_gtest(test_common
   test_common.cpp
   ../src/common.cpp
 )
-ament_target_dependencies(test_common rclcpp)
+target_link_libraries(test_common rclcpp::rclcpp)
 
 ament_add_gtest(test_data_queue
   test_data_queue.cpp
 )
-ament_target_dependencies(test_data_queue rclcpp)
+target_link_libraries(test_data_queue rclcpp::rclcpp)
 
 ament_add_gtest(test_forward_management
   test_forward_management.cpp
   ../src/forward_management.cpp
 )
-ament_target_dependencies(test_forward_management rclcpp std_srvs)
+target_link_libraries(test_forward_management rclcpp::rclcpp ${std_srvs_TARGETS})
 
 ament_add_gtest(test_service_server_proxy
   test_service_server_proxy.cpp
   ../src/service_server_proxy.cpp
 )
-ament_target_dependencies(test_service_server_proxy rclcpp std_srvs)
+target_link_libraries(test_service_server_proxy rclcpp::rclcpp ${std_srvs_TARGETS})
 
 ament_add_gtest(test_service_client_proxy_manager
   test_service_client_proxy_manager.cpp
   ../src/common.cpp
   ../src/service_client_proxy_manager.cpp
 )
-ament_target_dependencies(test_service_client_proxy_manager rclcpp std_srvs)
+target_link_libraries(test_service_client_proxy_manager rclcpp::rclcpp ${std_srvs_TARGETS})
 
 ament_add_gtest(test_message_forward_process
   test_message_forward_process.cpp
@@ -45,4 +45,4 @@ ament_add_gtest(test_message_forward_process
   ../src/service_server_proxy.cpp
   ../src/message_forward_process.cpp
 )
-ament_target_dependencies(test_message_forward_process rclcpp example_interfaces)
+target_link_libraries(test_message_forward_process rclcpp::rclcpp ${example_interfaces_TARGETS})
