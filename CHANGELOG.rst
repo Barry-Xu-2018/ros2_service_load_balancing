@@ -2,6 +2,11 @@
 Changelog for package service_load_balancing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add ament_cmake_gtest to package.xml
+* Use target_link_libraries instead of ament_target_dependencies
+
 0.1.1 (2024-12-16)
 ------------------
 * Change application name and update related document (`#4 <https://github.com/Barry-Xu-2018/ros2_service_load_balancing/issues/4>`_)
