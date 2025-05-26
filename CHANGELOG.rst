@@ -2,8 +2,8 @@
 Changelog for package service_load_balancing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.2 (2025-05-26)
+------------------
 * Add ament_cmake_gtest to package.xml
 * Use target_link_libraries instead of ament_target_dependencies
 
