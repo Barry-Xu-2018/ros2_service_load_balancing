@@ -16,14 +16,10 @@ jobs:
       env:
         ROS_DISTRO: rolling
     steps:
-      - name: Create workspace
-        shell: bash
-        run: |
-          mkdir -p /root/rolling_ws/src
       - name: Check out repository code
         uses: actions/checkout@main
         with:
-          path: /root/rolling_ws/src
+          path: rolling_ws/src
       - name: Install dependencies
         shell: bash
         run: |
@@ -33,11 +29,11 @@ jobs:
         shell: bash
         run: |
           source /opt/ros/rolling/setup.bash
-          cd /root/rolling_ws
+          cd rolling_ws
           colcon build --symlink-install
       - name: Run tests
         shell: bash
         run: |
           source /opt/ros/rolling/setup.bash
-          cd /root/rolling_ws
+          cd rolling_ws
           colcon test
