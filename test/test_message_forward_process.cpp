@@ -97,7 +97,8 @@ TEST_F(TestMessageForwardProcess, test_complete_request_send_and_response_receiv
   std::atomic_bool exit_thread = false;
   std::thread run_spin_thread([&exit_thread, this](){
     while(!exit_thread.load()) {
-      rclcpp::spin_some(node1_);
+      rclcpp::executors::SingleThreadedExecutor executor;
+      executor.spin_node_some(node1_);
     }
   });
 

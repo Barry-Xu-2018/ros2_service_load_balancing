@@ -17,6 +17,7 @@
 #include <chrono>
 #include <string>
 
+#include <rclcpp/executors/single_threaded_executor.hpp>
 #include <std_srvs/srv/empty.hpp>
 
 #include "../src/service_server_proxy.hpp"
@@ -99,7 +100,8 @@ TEST_F(TestServiceServerProxy, test_service_server_receive_request)
   auto future1 = test_client1->async_send_request(static_cast<void *>(&request));
   auto future2 = test_client2->async_send_request(static_cast<void *>(&request));
 
-  rclcpp::spin_all(node_, std::chrono::milliseconds(100));
+  rclcpp::executors::SingleThreadedExecutor executor;
+  executor.spin_node_all(node_, std::chrono::milliseconds(100));
 
   // Should get 2 request in request queue
   EXPECT_TRUE(request_queue->queue_size() == 2);
