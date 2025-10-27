@@ -2,6 +2,10 @@
 Changelog for package service_load_balancing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.3 (2025-10-27)
+------------------
+* Replace deprecated interface rclcpp::spin_some
+
 0.1.2 (2025-05-26)
 ------------------
 * Add ament_cmake_gtest to package.xml
